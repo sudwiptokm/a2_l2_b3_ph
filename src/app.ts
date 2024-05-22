@@ -7,6 +7,7 @@ import express, { Application, Request, Response } from 'express';
 
 import cors from 'cors';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import { OrderRoutes } from './app/modules/order/order.route';
 import { ProductRoutes } from './app/modules/product/product.route';
 
 // import globalErrorHandler from './app/middlewares/globalErrorHandler';
@@ -20,6 +21,7 @@ app.use(cors());
 
 // application routes
 app.use('/api/products', ProductRoutes);
+app.use('/api/orders', OrderRoutes);
 
 // Entry point
 const initialController = (req: Request, res: Response) => {
